@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>Karakter dengan Modal Popup</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .character-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .character-card {
+            width: 200px;
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .character-card img {
+            width: 100%;
+            height: 300px; 
+            object-fit: cover; 
+            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+}
+
+        .character-card button {
+            width: 100%;
+            background-color: #ff914d;
+            color: white;
+            border: none;
+            padding: 10px 0;
+            font-weight: bold;
+            border-radius: 0 0 10px 10px;
+            cursor: pointer;
+        }
+
+        .character-card button:hover {
+            background-color: #e07b3c;
+        }
+
+        .modal-header {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .modal-body img {
+            display: block;
+            margin: 0 auto 10px;
+            max-width: 100%;
+        }
+
+        .modal-body p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="character-container">
+
+        <div class="character-card">
+            <img src="assets/furina.jpg" alt="Furina" data-desk="Furina de Fontaine adalah karakter Hydro yang dapat dimainkan dalam Genshin Impact. Dikenal sebagai Archon Hydro, ia memiliki kepribadian flamboyan dan dramatis, sering kali berbicara dengan gaya yang penuh percaya diri. Furina memiliki kemampuan untuk beralih antara dua alignment Pengenalan Karakter.">
+            <button class="open-popup" data-gmbr="assets/furina.jpg" data-desk="Furina de Fontaine adalah karakter Hydro yang dapat dimainkan dalam Genshin Impact. Dikenal sebagai Archon Hydro, ia memiliki kepribadian flamboyan dan dramatis, sering kali berbicara dengan gaya yang penuh percaya diri. Furina memiliki kemampuan untuk beralih antara dua alignment Pengenalan Karakter.">Furina</button>
+        </div>
+
+        <div class="character-card">
+            <img src="assets/nahida.jpg" alt="Nahida" data-desk="Nahida adalah karakter dari game Genshin Impact yang berasal dari wilayah Sumeru. Dia merupakan Archon Dendro dan dikenal sebagai God of Wisdom. Nahida memiliki penampilan yang anggun dengan rambut hijau muda dan mata yang cerah, mencerminkan hubungan eratnya dengan alam dan pengetahuan.">
+            <button class="open-popup" data-gmbr="assets/nahida.jpg" data-desk="Nahida adalah karakter dari game Genshin Impact yang berasal dari wilayah Sumeru. Dia merupakan Archon Dendro dan dikenal sebagai God of Wisdom. Nahida memiliki penampilan yang anggun dengan rambut hijau muda dan mata yang cerah, mencerminkan hubungan eratnya dengan alam dan pengetahuan.">Nahida</button>
+        </div>
+
+        <div class="character-card">
+            <img src="assets/yaemiko.jpg" alt="Yae Miko" data-desk="Yae Miko adalah salah satu karakter dalam permainan Genshin Impact yang berasal dari wilayah Inazuma. Dia adalah seorang karakter bintang 5 dengan elemen Electro dan menggunakan senjata tipe Catalyst. Yae Miko dikenal sebagai kepala kuil dari Grand Narukami Shrine dan merupakan sosok yang anggun serta misterius.">
+            <button class="open-popup" data-gmbr="assets/yaemiko.jpg" data-desk="Yae Miko adalah salah satu karakter dalam permainan Genshin Impact yang berasal dari wilayah Inazuma. Dia adalah seorang karakter bintang 5 dengan elemen Electro dan menggunakan senjata tipe Catalyst. Yae Miko dikenal sebagai kepala kuil dari Grand Narukami Shrine dan merupakan sosok yang anggun serta misterius.">Yae Miko</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGambar" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Detail Karakter</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modal-img" class="img-fluid" alt="Gambar Karakter">
+                    <p id="modal-desc" class="mt-2"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $(".open-popup").click(function() {
+                var gmbr = $(this).data('gmbr');
+                var desk = $(this).data('desk');
+
+                // Set gambar dan deskripsi ke modal
+                $('#modal-img').attr('src', gmbr);
+                $('#modal-desc').text(desk);
+
+                // Tampilkan modal
+                $('#modalGambar').modal('show');
+            });
+        });
+    </script>
+</body>
+</html>
