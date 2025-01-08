@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Genshin Impact</title>
+</head>
+<body>
+    <nav>
+        <a href="main">Home</a>
+        <a href="">Element</a>
+        <a href="">Kontak</a>
+        <a href="">Tentang Kami</a>
+    </nav>
+    <header>
+        <img src="{{ url_for('static', filename='img/GI.jpg') }}" width="500" height="200" style="border-radius: 50%;">
+        <h1>Genshin Impact</h1>
+    </header>
+    <article>
+        <h2>Tentang Genshin</h2>
+        <p>
+            Genshin Impact Mempunyai waifu yang cocok di jadikan istri :
+        </p>
+    </article>
+    <div style="max-width: 600px; margin: 3em auto">
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th colspan="2">berikut adalah contoh contoh waifunya</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>hutao</li>
+                            <li>furina</li>
+                            <li>yae miko</li>
+                            <li>nahida</li>
+                            <li>navia</li>
+                            <li>raiden</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/hutao.jpg')}}" width="50" height="50" style="border-radius: 50%;"/>
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/furina.jpg')}}" width="50" height="50" style="border-radius: 50%;"/>
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/yaemiko1.jpg')}}" width="50" height="50" style="border-radius: 50%;"/>
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/nahida.jpg')}}" width="50" height="50" style="border-radius: 50%;"/>
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/navia.jpg')}}" width="50" height="50" style="border-radius: 50%;"/>
+                            </li>
+                            <li>
+                                <img src="{{ url_for('static', filename='img/raiden.jpg')}}" width="50" height="50" style="border-radius: 50%;"/>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <footer style="text-align: center;">
+        &copy;Copyright &copy; Genshin Impact
+    </footer>
+</body>
+</html>
